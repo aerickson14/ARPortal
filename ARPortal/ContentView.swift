@@ -1,9 +1,7 @@
-import SwiftUI
-import RealityKit
 import ARKit
+import SwiftUI
 
 struct ContentView: View {
-
     let arModel = ARModel()
 
     var body: some View {
@@ -16,7 +14,6 @@ struct ContentView: View {
 }
 
 struct ARViewContainer: UIViewRepresentable {
-
     let arModel: ARModel
 
     init(arModel: ARModel) {
@@ -24,7 +21,6 @@ struct ARViewContainer: UIViewRepresentable {
     }
 
     func makeUIView(context: Context) -> ARSCNView {
-
         let view = ARSCNView()
 
         let session = view.session
@@ -43,7 +39,7 @@ struct ARViewContainer: UIViewRepresentable {
         return view
     }
 
-    func updateUIView(_ uiView: ARSCNView, context: Context) {}
+    func updateUIView(_: ARSCNView, context _: Context) {}
 
     func makeCoordinator() -> ARModel {
         arModel
@@ -51,7 +47,6 @@ struct ARViewContainer: UIViewRepresentable {
 }
 
 class ARModel {
-
     var sceneView: ARSCNView?
 
     init() {}
@@ -85,5 +80,4 @@ class ARModel {
 
         return portalNode
     }
-
 }
